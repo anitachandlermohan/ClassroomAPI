@@ -11,7 +11,7 @@ public class Trainer {
 	@Column
 	private String trainerName;
 	
-	@OneToMany(mappedBy="trainer")
+	@OneToMany(mappedBy="trainer", fetch = FetchType.EAGER)
 	private Collection<Trainee> trainees;
 	
 	
