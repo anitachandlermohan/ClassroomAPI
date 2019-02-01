@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 public class Trainer {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "trainerID")
 	private Long trainerID;
 	@Column
 	private String trainerName;
