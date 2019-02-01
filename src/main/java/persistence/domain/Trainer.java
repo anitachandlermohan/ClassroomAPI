@@ -18,7 +18,9 @@ public class Trainer {
 	public Trainer() {
 		
 	}
-	
+	public Trainer(String trainerName) {
+		this.trainerName = trainerName;
+	}
 	public Trainer(String trainerName, Collection<Trainee> trainees) {
 		this.trainerName = trainerName;
 		this.trainees = trainees;
