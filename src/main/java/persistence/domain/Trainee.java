@@ -12,18 +12,16 @@ public class Trainee {
 	@Column
 	private String traineeName;
 	
-	@ManyToOne
-	@JoinColumn(name = "trainerID", nullable = false)
-	private Trainer trainer;
+	private Long trainerID;
 	
 	
 	public Trainee() {
 		
 	}
 	
-	public Trainee(String traineeName, Trainer trainer) {
+	public Trainee(String traineeName) {
 		this.traineeName = traineeName;
-		this.trainer = trainer;
+		
 	}
 	
 	public String getTraineeName() {
@@ -34,12 +32,12 @@ public class Trainee {
 		this.traineeName = traineeName;
 	}
 	
-	public Trainer getTrainer() {
-		return trainer;
+	public Long getTrainer() {
+		return trainerID;
 	}
 	
-	public void setTrainer(Trainer trainer) {
-		this.trainer = trainer;
+	public void setTrainer( Long trainerID) {
+		this.trainerID = trainerID;
 	}
 	
 	public Long getTraineeID() {

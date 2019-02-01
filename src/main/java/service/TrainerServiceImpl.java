@@ -30,6 +30,10 @@ public class TrainerServiceImpl implements TrainerService{
 		return repo.deleteTrainer(trainerID);
 	}
 
+	public String addTrainee(Long trainerID, String trainee) {
+		return repo.addTrainee(trainerID, trainee);
+	}
+
 	
 
 }

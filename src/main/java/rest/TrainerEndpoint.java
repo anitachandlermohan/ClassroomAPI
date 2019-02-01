@@ -39,6 +39,13 @@ public class TrainerEndpoint {
 	public String updateTrainer(@PathParam("trainerID")Long trainerID, String trainer) {
 		return service.updateTrainer(trainerID, trainer);
 	}
+	@Path("/addTraineetoTrainer/{trainerID}")
+	@PUT
+	@Produces({"application/json"})
+	public String addTrainee(@PathParam("trainerID")Long trainerID, String trainee) {
+		return service.addTrainee(trainerID, trainee);
+	}
+	
 	
 	@Path("/deleteTrainer/{trainerID}")
 	@DELETE
