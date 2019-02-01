@@ -1,5 +1,10 @@
 package persistence.repository;
 
-public class TrainerRepository {
+public interface TrainerRepository {
+	String getAllTrainers();
+	String getTrainer(Long trainerID);
+	String createTrainer(String trainer);
+	String updateTrainer(Long trainerID, String trainer);
+	String deleteTrainer(Long trainerID);
 
 }

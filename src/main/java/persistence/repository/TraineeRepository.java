@@ -1,5 +1,10 @@
 package persistence.repository;
 
-public class TraineeRepository {
+public interface TraineeRepository {
+	String getAllTrainees();
+	String getTrainee(Long traineeID);
+	String createTrainee(String trainee);
+	String updateTrainee(Long traineeID, String trainee);
+	String deleteTrainee(Long traineeID);
 
 }
