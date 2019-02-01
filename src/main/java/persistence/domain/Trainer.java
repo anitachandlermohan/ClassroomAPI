@@ -3,7 +3,7 @@ package persistence.domain;
 import java.util.Collection;
 
 import javax.persistence.*;
-
+@Entity
 public class Trainer {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "trainerID")
@@ -11,7 +11,7 @@ public class Trainer {
 	@Column
 	private String trainerName;
 	
-	@OneToMany(mappedBy="trainer_trainees")
+	@OneToMany(mappedBy="trainer")
 	private Collection<Trainee> trainees;
 	
 	

@@ -1,6 +1,7 @@
 package persistence.domain;
 
 import javax.persistence.*;
+@Entity
 public class Trainee {
 	
 	@Id 
