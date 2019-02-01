@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.persistence.*;
 import javax.transaction.Transactional;
 
+import persistence.domain.Trainee;
 import persistence.domain.Trainer;
 import util.JSONUtil;
 
@@ -56,6 +57,14 @@ public class TrainerDBrepository implements TrainerRepository{
 		return "{\"message\" : \"trainer deleted\"}";
 		
 		
+	}
+	@Transactional(REQUIRED)
+	public String addTrainee(Long trainerID, String trainee) {
+		Trainer trainer = em.find(Trainer.class, trainerID);
+		Trainee traineeObject = util.getObjectForJSON(trainee, Trainee.class);
+		em.persist(traineeObject);
+		trainer.getTrainees().add(traineeObject);
+		return "{\"message\" : \"trainee added to trainee\"}";
 	}
 
 }

@@ -1,6 +1,7 @@
 package persistence.domain;
 
 import java.util.Collection;
+import java.util.LinkedHashSet;
 
 import javax.persistence.*;
 @Entity
@@ -11,8 +12,8 @@ public class Trainer {
 	@Column
 	private String trainerName;
 	
-	@OneToMany(mappedBy="trainer", fetch = FetchType.EAGER)
-	private Collection<Trainee> trainees;
+	@OneToMany(mappedBy="trainerID", fetch = FetchType.EAGER)
+	private Collection<Trainee> trainees = new LinkedHashSet<Trainee>();
 	
 	
 	public Trainer() {
@@ -21,11 +22,8 @@ public class Trainer {
 	public Trainer(String trainerName) {
 		this.trainerName = trainerName;
 	}
-	public Trainer(String trainerName, Collection<Trainee> trainees) {
-		this.trainerName = trainerName;
-		this.trainees = trainees;
-		
-	}
+	
+	
 	
 	public String getTrainerName() {
 		return trainerName;
@@ -50,5 +48,7 @@ public class Trainer {
 	public void setTrainees(Collection<Trainee> trainees) {
 		this.trainees = trainees;
 	}
+	
+	
 
 }
